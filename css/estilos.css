@@ -1,0 +1,212 @@
+:root {
+    --ink: #262019;
+    --paper: #efe7d4;
+    --paper-raised: #f7f1e2;
+    --green: #24463b;
+    --green-deep: #16302a;
+    --stamp-red: #a4402f;
+    --line: #cbbd9c;
+    --gold: #a9822f;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background-color: var(--paper);
+    background-image:
+        repeating-linear-gradient(0deg, rgba(0,0,0,0.015) 0px, rgba(0,0,0,0.015) 1px, transparent 1px, transparent 3px);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    line-height: 1.5;
+}
+
+h1, h2, h3 { font-family: 'Fraunces', serif; margin: 0 0 0.4em 0; color: var(--green-deep); }
+
+a { color: inherit; }
+
+/* ---------- Header / nav ("fichero" tabs) ---------- */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 22px 6vw 0 6vw;
+    background: var(--green-deep);
+    color: var(--paper-raised);
+}
+
+.brand { display: flex; align-items: center; gap: 12px; padding-bottom: 18px; }
+.brand-mark { font-size: 1.8rem; }
+.brand-title { display: block; font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; }
+.brand-sub { display: block; font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }
+
+.catalog-nav { display: flex; gap: 4px; }
+
+.catalog-nav .tab {
+    text-decoration: none;
+    color: var(--paper-raised);
+    background: rgba(255,255,255,0.06);
+    padding: 10px 18px 12px 18px;
+    border-radius: 8px 8px 0 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.catalog-nav .tab .tab-code {
+    font-size: 0.65rem;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: 3px;
+    padding: 1px 4px;
+}
+
+.catalog-nav .tab:hover { background: var(--paper); color: var(--green-deep); }
+
+/* ---------- Layout shell ---------- */
+
+main { max-width: 1080px; margin: 0 auto; padding: 48px 6vw 80px 6vw; }
+
+/* ---------- Hero (index) ---------- */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding-top: 12px;
+}
+
+.hero-stamp {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--stamp-red);
+    border: 2px solid var(--stamp-red);
+    border-radius: 4px;
+    padding: 4px 10px;
+    transform: rotate(-3deg);
+    margin-bottom: 18px;
+}
+
+.hero h1 { font-size: 2.6rem; line-height: 1.08; }
+
+.hero p.lead { font-size: 1.05rem; max-width: 46ch; }
+
+.hero-image {
+    border: 10px solid var(--paper-raised);
+    box-shadow: 0 12px 30px rgba(22,48,42,0.25);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+@media (max-width: 760px) {
+    .hero { grid-template-columns: 1fr; }
+}
+
+/* ---------- Card-catalog table styling for libros/socios ---------- */
+
+.section-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+    display: block;
+}
+
+.catalog-table-wrap {
+    margin-top: 24px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--paper-raised);
+}
+
+table.catalog {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+table.catalog thead th {
+    text-align: left;
+    background: var(--green);
+    color: var(--paper-raised);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 12px 16px;
+}
+
+table.catalog tbody td {
+    padding: 12px 16px;
+    border-top: 1px dashed var(--line);
+}
+
+table.catalog tbody tr:nth-child(even) { background: rgba(36,70,59,0.04); }
+
+.empty-note {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--stamp-red);
+    padding: 18px 0;
+}
+
+/* ---------- Contact page ---------- */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    margin-top: 24px;
+}
+
+.contact-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 24px;
+}
+
+.contact-card dt { font-family: 'Space Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-top: 16px; }
+.contact-card dt:first-child { margin-top: 0; }
+.contact-card dd { margin: 4px 0 0 0; }
+
+.map-frame {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    min-height: 320px;
+}
+
+.map-frame iframe { width: 100%; height: 100%; min-height: 320px; border: 0; display: block; }
+
+@media (max-width: 760px) {
+    .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Footer ---------- */
+
+footer.site-footer {
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--green-deep);
+    opacity: 0.7;
+    padding: 24px 6vw 40px 6vw;
+}
