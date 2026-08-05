@@ -21,7 +21,7 @@
             </p>
         </div>
         <div class="hero-image">
-            <!-- Reemplazá esta imagen por una propia (puede ser generada con IA) en la carpeta /img -->
+            
             <img src="img/portada.jpg" alt="Interior de la biblioteca">
         </div>
     </section>

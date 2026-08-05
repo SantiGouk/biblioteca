@@ -35,7 +35,7 @@
                 echo '<td>' . htmlspecialchars($fila['titulo']) . '</td>';
                 echo '<td>' . htmlspecialchars($fila['autor']) . '</td>';
                 echo '<td>' . htmlspecialchars($fila['editorial']) . '</td>';
-                echo '<td>' . htmlspecialchars($fila['anio']) . '</td>';
+                echo '<td>' . htmlspecialchars($fila['año']) . '</td>';
                 echo '<td>' . ($fila['disponible'] ? 'Sí' : 'No') . '</td>';
                 echo '</tr>';
             }
